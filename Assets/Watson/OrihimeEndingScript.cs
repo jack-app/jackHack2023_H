@@ -8,8 +8,11 @@ public class OrihimeEndingScript : MonoBehaviour
     Rigidbody rb;
     [SerializeField]
     float frontVecX;
+    [SerializeField]
+    EndingManagerScript endingManagerScript;
 
     bool isMove = false;
+    bool isOrihime = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,10 @@ public class OrihimeEndingScript : MonoBehaviour
     {
         if (other.tag == "BridgeCenter")
         {
+            if (isOrihime && isMove)
+            {
+                endingManagerScript.ExitWalk();
+            }
             isMove = false;
         }
     }
