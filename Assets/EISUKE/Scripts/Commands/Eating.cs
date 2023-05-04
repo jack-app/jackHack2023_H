@@ -12,9 +12,10 @@ public class Eating : MonoBehaviour
     [SerializeField] GameObject commands; 
     [SerializeField] GameObject taberuButton; 
     [SerializeField] GameObject exitButton;
+    public Button eatingButton{ get; set; } 
     int weight,staminaValue;
-    int getWeightValue = 10;
-    int staminaUpValue = 20;
+    int getWeightValue = 30;
+    int staminaUpValue = 30;
 
     void Start()
     {
@@ -22,29 +23,34 @@ public class Eating : MonoBehaviour
         staminaGauge.value = GameDataManager.Instance.staminaValue;
         foodsPanel.SetActive(false);
     }
-    public void OnClickEating()
+    public void OnClickEating()//選択画面の方
     {
         foodsPanel.SetActive(true);
         commands.SetActive(false);
         exitButton.SetActive(true);
     }
-    public void OnClickTaberu()
+    public void OnClickTaberu()//遷移先の方
     {
         taberuButton.SetActive(false);//消す
         GetWeight();
         UpStamina();
         dateManager.SetUpNextDay();
+        taberuButton.SetActive(true);
     }
     void GetWeight()
     {
         weight = GameDataManager.Instance.weight + getWeightValue;
-        weightText.text = weight.ToString()+"kg"; 
         GameDataManager.Instance.weight = weight;
+        weightText.text = weight.ToString()+"kg"; //コルーチン入れるのあり
     }
     void UpStamina()
     {
         staminaValue = GameDataManager.Instance.staminaValue + staminaUpValue;
-        staminaGauge.value = staminaValue;
+        if(staminaValue >= staminaGauge.maxValue)
+        {
+            staminaValue = (int)staminaGauge.maxValue;
+        }
         GameDataManager.Instance.staminaValue = staminaValue;
+        staminaGauge.value = staminaValue;
     }
 }

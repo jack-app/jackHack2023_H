@@ -5,9 +5,9 @@ using UnityEngine;
 public class GameDataManager : MonoBehaviour
 { 
     public int weight{ get; set; }
-    public int hikoValue{ get; set; } 
-    public int fatherValue{ get; set; } 
-    public int bridgeValue{ get; set; } 
+    public int hikoValue{ get; set; }
+    public int fatherValue{ get; set; }
+    public int bridgeValue{ get; set; }
     public int staminaValue{ get; set; } 
     public static GameDataManager Instance { get; private set; }
     private void Awake() 
@@ -17,14 +17,6 @@ public class GameDataManager : MonoBehaviour
         fatherValue = 0; 
         bridgeValue = 0; 
         staminaValue = 100; 
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else 
-        {
-            Destroy(gameObject);
-        }
+        Instance = this;
     }
 }
