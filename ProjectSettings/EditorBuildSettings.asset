@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Daburu/Daburu.unity
+    guid: 218aaa1b8c8265a448201afe7065fd6e
+  - enabled: 1
+    path: Assets/Daburu/Growing.unity
+    guid: 6af50fdad5f04de4bb2555f30947def9
   m_configObjects: {}
