@@ -14,7 +14,7 @@ public class GameDataManager : MonoBehaviour
     {
         weight = 40;
         hikoValue = 0; 
-        fatherValue = 0; 
+        fatherValue = 3; 
         bridgeValue = 0; 
         staminaValue = 100; 
         Instance = this;

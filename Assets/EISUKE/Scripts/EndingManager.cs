@@ -30,6 +30,7 @@ public class EndingManager : MonoBehaviour
         if(Probability(temp_notConfessProb))
         {
             endingNum = 0;
+            Debug.Log(endingNum);
             return;
         }
         //橋が崩れるか
@@ -37,21 +38,26 @@ public class EndingManager : MonoBehaviour
         if(bridgeValue == 0)
         {
             endingNum = 1;
+            Debug.Log(endingNum);
             return;
         }
         else if(lastWeight > bridgeStr)
         {
             endingNum = 1;
+            Debug.Log(endingNum);
             return;
         }
         //フラれるかどうか
         int fabRating = hikoValue + lastWeight/10;//好感度と体重
+        Debug.Log(fabRating);
         if(fabRating < 40)
         {
             endingNum = 2;
+            Debug.Log(endingNum);
             return;
         }
         endingNum = 3;
+        Debug.Log(endingNum);
     }
     public static bool Probability(float fPercent)
     {

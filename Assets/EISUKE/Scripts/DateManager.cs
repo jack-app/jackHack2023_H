@@ -11,9 +11,9 @@ public class DateManager : MonoBehaviour
     [SerializeField] Image DatePanel;
     [SerializeField] Text leftDaysText;
     [SerializeField] Text dateText;
-    int month = 6;
-    int date = 23;
-    int leftDays = 13;
+    int month = 7;
+    int date = 3;
+    int leftDays = 4;
     void Start()
     {
         dateText.text = $"{month}月{date}日";
