@@ -41,9 +41,11 @@ public class EndingManagerScript : MonoBehaviour
     TalkData talkData;
     [SerializeField]
     Text talkText;
+
     // Start is called before the first frame update
     void Start()
     {
+        endingNumber = (EndingNumber)EndingManager.Instance.endingNum;
         if (endingNumber != EndingNumber.father)
         {
             orihimeScript.setMove();
