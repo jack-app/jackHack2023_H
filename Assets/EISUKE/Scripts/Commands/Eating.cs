@@ -12,6 +12,7 @@ public class Eating : MonoBehaviour
     [SerializeField] GameObject commands; 
     [SerializeField] GameObject taberuButton; 
     [SerializeField] GameObject exitButton;
+    [SerializeField] GameObject orihimeBody;
     public Button eatingButton{ get; set; } 
     int weight,staminaValue;
     int getWeightValue = 30;
@@ -42,6 +43,8 @@ public class Eating : MonoBehaviour
         weight = GameDataManager.Instance.weight + getWeightValue;
         GameDataManager.Instance.weight = weight;
         weightText.text = weight.ToString()+"kg"; //コルーチン入れるのあり
+        Vector3 orihimeScale = orihimeBody.transform.localScale;
+        orihimeBody.transform.localScale = new Vector3(orihimeScale.x*1.2f, orihimeScale.y*1.2f, orihimeScale.z*1.2f);
     }
     void UpStamina()
     {
