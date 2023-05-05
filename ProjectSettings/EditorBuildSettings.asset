@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Daburu/Daburu.unity
     guid: 218aaa1b8c8265a448201afe7065fd6e
   - enabled: 1
-    path: Assets/Daburu/Growing.unity
-    guid: 6af50fdad5f04de4bb2555f30947def9
+    path: Assets/EISUKE/EISUKE.unity
+    guid: 545c5bf2004be3643be215e8f64d63e7
+  - enabled: 1
+    path: Assets/Watson/Ending.unity
+    guid: 788e1ccf1a6f44b379486d829e847498
   m_configObjects: {}

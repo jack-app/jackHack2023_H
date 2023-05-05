@@ -39,7 +39,7 @@ public class DateManager : MonoBehaviour
         if(month == 7 && date == 7)
         {
             endingManager.JudgeEnding();
-            //Endingシーンへ遷移
+            FadeManager.Instance.LoadScene("Ending", 3.0f);//Endingシーンへ遷移
         }
         leftDays--;
         leftDaysText.text = $"七夕まであと{leftDays}日";
