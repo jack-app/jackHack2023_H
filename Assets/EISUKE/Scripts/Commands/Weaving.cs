@@ -12,9 +12,9 @@ public class Weaving : MonoBehaviour
     [SerializeField] GameObject exitButton;
     [SerializeField] GameObject hataoriButton;
     public Button weavingButton{ get; set; }  
+    int successNum;
     int fatherValue,staminaValue;
     int staminaDownValue = 20;
-    int fatherUpValue = 1;
 
     void Start()
     {
@@ -27,6 +27,7 @@ public class Weaving : MonoBehaviour
         weavingPanel.SetActive(true);
         commands.SetActive(false);
         exitButton.SetActive(true);
+        SuccessRate();//ここで決めておく
     }
     public void OnClickHataori()//遷移先の方
     {
@@ -38,7 +39,7 @@ public class Weaving : MonoBehaviour
     }
     void UpFather()
     {
-        fatherValue = GameDataManager.Instance.fatherValue + fatherUpValue;
+        fatherValue = GameDataManager.Instance.fatherValue + successNum;
         if(fatherValue >= fatherGauge.maxValue)
         {
             fatherValue = (int)fatherGauge.maxValue;
@@ -55,5 +56,24 @@ public class Weaving : MonoBehaviour
         }
         GameDataManager.Instance.staminaValue = staminaValue;
         staminaGauge.value = staminaValue;
+    }
+    void SuccessRate()
+    {
+        int specialSuccessProb = 10;
+        int successProb = 70;
+        if(EndingManager.Probability(specialSuccessProb))//大成功
+        {
+            successNum = 2;
+            Debug.Log(2);
+            return;
+        }
+        else if(EndingManager.Probability(successProb))//成功
+        {
+            successNum = 1;
+            Debug.Log(1);
+            return;
+        }
+        successNum = 0;//失敗
+        Debug.Log(0);
     }
 }
