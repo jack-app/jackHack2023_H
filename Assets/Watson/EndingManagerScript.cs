@@ -41,11 +41,18 @@ public class EndingManagerScript : MonoBehaviour
     TalkData talkData;
     [SerializeField]
     Text talkText;
+    [SerializeField]
+    GameObject button;
+    [SerializeField]
+    Image endPanel;
 
     // Start is called before the first frame update
     void Start()
     {
-        endingNumber = (EndingNumber)EndingManager.Instance.endingNum;
+        if (EndingManager.Instance)
+        {
+            endingNumber = (EndingNumber)EndingManager.Instance.endingNum;
+        }
         if (endingNumber != EndingNumber.father)
         {
             orihimeScript.setMove();
@@ -56,6 +63,8 @@ public class EndingManagerScript : MonoBehaviour
         {
             orihime.SetActive(false);
             hikoboshi.SetActive(false);
+            StartCoroutine(propose(8, 5));
+            StartCoroutine(showButton(14));
         }
     }
 
@@ -81,16 +90,20 @@ public class EndingManagerScript : MonoBehaviour
                 StartCoroutine(HeartStart(10000));
                 StartCoroutine(propose(3, 0));
                 StartCoroutine(propose(15, 1));
+                StartCoroutine(EndFadeIn(20));
                 break;
             case EndingNumber.reject:
                 StartCoroutine(HeartStart(5));
                 StartCoroutine(propose(3, 0));
                 StartCoroutine(propose(10, 2));
+                StartCoroutine(showButton(14));
                 break;
             case EndingNumber.fall:
                 StartCoroutine(HeartStart(2));
                 StartCoroutine(propose(0, 3));
                 fallRb.useGravity = true;
+                StartCoroutine(propose(10, 4));
+                StartCoroutine(showButton(14));
                 break;
             default:
                 break;
@@ -108,5 +121,26 @@ public class EndingManagerScript : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         talkText.text = talkData.talks[talkIndex];
+    }
+
+    private IEnumerator showButton(float time)
+    {
+        yield return new WaitForSeconds(time);
+        button.SetActive(true);
+    }
+
+    IEnumerator EndFadeIn(float time)
+    {
+        yield return new WaitForSeconds(time);
+        endPanel.gameObject.SetActive(true);
+        float speed = 0.005f;
+        while (endPanel.color.a < 1)
+        {
+            endPanel.color = new Color(endPanel.color.r, endPanel.color.g, endPanel.color.b, endPanel.color.a + speed);
+            yield return new WaitForSeconds(speed);
+        }
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(showButton(0));
+        yield return null;
     }
 }
