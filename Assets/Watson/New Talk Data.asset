@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0308b8f9be08546e082674a0049a2217, type: 3}
+  m_Name: New Talk Data
+  m_EditorClassIdentifier: 
+  testString: "\u3053\u308C\u306FScriptableObject\u306E\u30C6\u30B9\u30C8\u3067\u3059\u3002"
+  talks:
+  - "\u305A\u3063\u3068\u3042\u306A\u305F\u306E\u3053\u3068\u304C\u597D\u304D\u306A\u306E\u3002
+    \u79C1\u3068\u7D50\u5A5A\u3057\u3066\u304F\u308C\u307E\u305B\u3093\u304B\uFF1F"
+  - "\u50D5\u3082\u3001\u597D\u304D\u3060\u3002 \u7D50\u5A5A\u3057\u3066\u304F\u3060\u3055\u3044"
+  - "\u3054\u3081\u3093\u3002\u541B\u3092\u3082\u3046\u305D\u3093\u306A\u98A8\u306B\u306F\u898B\u3089\u308C\u306A\u3044\u3093\u3060\u3002\u5225\u308C\u3088\u3046"
+  - "\u305A\u3063\u3068\u3042\u306A\u305F\u306E\u3053\u3068\u304C..."
