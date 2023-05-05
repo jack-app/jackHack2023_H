@@ -46,9 +46,12 @@ public class EndingManagerScript : MonoBehaviour
     [SerializeField]
     Image endPanel;
 
+    [SerializeField] GameObject orihimeBody;
     // Start is called before the first frame update
     void Start()
     {
+        float weight = EndingManager.Instance.lastWeight;
+        orihimeBody.transform.localScale = new Vector3(weight / 40f, weight / 40f, weight / 40f);
         if (EndingManager.Instance)
         {
             endingNumber = (EndingNumber)EndingManager.Instance.endingNum;

@@ -4623,6 +4623,11 @@ Transform:
   m_Father: {fileID: 774344187}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1215945961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5490533921691392192, guid: ee87ea26a47d248b2aad86a049c4d46f, type: 3}
+  m_PrefabInstance: {fileID: 8705520758672024557}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1217910188
 GameObject:
   m_ObjectHideFlags: 0
@@ -4664,6 +4669,7 @@ MonoBehaviour:
   talkText: {fileID: 1500264668}
   button: {fileID: 141974561}
   endPanel: {fileID: 2145978178}
+  orihimeBody: {fileID: 1215945961}
 --- !u!4 &1217910190
 Transform:
   m_ObjectHideFlags: 0
