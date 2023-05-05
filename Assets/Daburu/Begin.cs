@@ -5,10 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Begin : MonoBehaviour
 {
-    public string sceneName;
-
     public void LoadScene()
     {
-        SceneManager.LoadScene(sceneName);
+        FadeManager.Instance.LoadScene("EISUKE", 1.0f);
     }
 }

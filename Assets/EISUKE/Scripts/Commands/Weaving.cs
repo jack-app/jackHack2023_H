@@ -64,16 +64,13 @@ public class Weaving : MonoBehaviour
         if(EndingManager.Probability(specialSuccessProb))//大成功
         {
             successNum = 2;
-            Debug.Log(2);
             return;
         }
         else if(EndingManager.Probability(successProb))//成功
         {
             successNum = 1;
-            Debug.Log(1);
             return;
         }
         successNum = 0;//失敗
-        Debug.Log(0);
     }
 }
